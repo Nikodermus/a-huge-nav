@@ -1,0 +1,127 @@
+// Libraries
+@import "../../node_modules/reset-css/_reset";
+
+// SCSS Partials
+@import "_helpers";
+@import "_components";
+
+:root {
+  @include scrollbars(5px, $magenta);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  transition: all $transition 0.3s;
+  outline: 0 !important;
+
+  &:hover {
+    transition: all $transition 0.3s;
+  }
+
+  &:active,
+  &:focus {
+    transition: all $transition 0.3s;
+    outline: 0 !important;
+    border: 0 !important;
+  }
+}
+
+button,
+input,
+textarea,
+a {
+  &:active,
+  &:focus {
+    outline: 0 !important;
+    border: 0 solid transparent !important;
+    box-shadow: 0 0 0 transparent !important;
+  }
+}
+
+html {
+  background: $white;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Galaxie Copernicus Book;
+  color: $black;
+  box-sizing: border-box;
+
+  * {
+    line-height: 1.3;
+  }
+
+  @include scrollbars(5px, $magenta);
+}
+
+body {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  background: $white;
+  font-family: inherit;
+  overflow-x: hidden;
+}
+
+button,
+input,
+label {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0 !important;
+
+  &:hover {
+    outline: 0 !important;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0 !important;
+  }
+
+  &:active {
+    outline: 0 !important;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: $sm;
+}
+
+img {
+  object-fit: contain;
+}
+
+h1 {
+  font: Galaxie Copernicus Book;
+  letter-spacing: -0.06em;
+  text-align: center;
+}
+
+// Fonts
+.primary-navigation {
+  @include font($font: HUGE Avant Garde Bold, $size: 21, $line-height: 48);
+}
+
+.secondary-navigation {
+  @include font($font: Galaxie Copernicus Book, $size: 16, $line-height: 48);
+}
+
+.headline {
+  @include font($font: HUGE Avant Garde Bold, $size: 44, $line-height: 48, $d-size: 120, $d-line-height: 132);
+}
+
+.body-copy {
+  @include font($font: Galaxie Copernicus Book, $size: 14, $line-height: 24, $d-size: 24, $d-line-height: 36);
+}
+
+.copyright {
+  @include font($font: Galaxie Copernicus Book, $size: 12, $line-height: 16);
+}

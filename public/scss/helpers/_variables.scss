@@ -1,0 +1,26 @@
+$base-font-size: 16;
+$transition: cubic-bezier(0.65, 0.05, 0.36, 1);
+
+// Colors
+$white: #fff !default;
+$black: #000 !default;
+$magenta: #ec008c !default;
+$light-grey: #eee !default;
+$translucent-black: rgba(#000, 0.5) !default;
+
+// Fonts
+$font-helvetica: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+
+// Breakpoints
+$screen-xs: 0 !default;
+$screen-sm: 720px !default;
+$screen-md: 960px !default;
+$screen-lg: 1140px !default;
+
+// Sizes
+$xs: 0.4rem;
+$sm: 0.8rem;
+$md: 1.6rem;
+$lg: 3.2rem;
+$xl: 6.5rem;

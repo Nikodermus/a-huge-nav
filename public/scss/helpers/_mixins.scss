@@ -1,0 +1,67 @@
+@import "variables";
+
+// Clear elements bellow
+@mixin clearfix {
+  &::after,
+  &::before {
+    content: '';
+    display: table;
+    line-height: 0;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// Add custom styled scrollbars when possible
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, transparent, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+// Set fonts based on readme instructions
+@mixin font(
+    $font: $font-helvetica,
+    $size: 16,
+    $line-height: 21,
+    $d-size: auto,
+    $d-line-height: auto
+  ) {
+  font-family: $font, $font-helvetica;
+  font-size: rem($size);
+  line-height: $line-height / $size;
+
+  @if $d-size != "auto" {
+    @media (min-width: $screen-sm) {
+      font-size: rem($d-size);
+      line-height: $d-line-height / $d-size;
+    }
+  }
+}
+
+// PX to EM
+@function em($px, $base: $base-font-size) {
+  @return $px / $base * 1em;
+}
+
+// PX to REM
+@function rem($px, $base: $base-font-size) {
+  @return $px / $base * 1rem;
+}
