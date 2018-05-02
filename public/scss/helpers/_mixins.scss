@@ -14,6 +14,21 @@
   }
 }
 
+// Background
+@mixin retina($file, $ext: "png", $parallax: false) {
+  background-image: url("#{$file}.#{$ext}");
+  background-size: cover;
+  background-position: center center;
+
+  @if $parallax {
+    background-attachment: fixed;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url("#{$file}@2x.#{$ext}");
+  }
+}
+
 // Add custom styled scrollbars when possible
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, transparent, 50%)) {
   ::-webkit-scrollbar {
@@ -41,13 +56,17 @@
   font-family: $font, $font-helvetica;
   font-size: rem($size);
   line-height: $line-height / $size;
-  letter-spacing: rem($size * -0.17);
+  letter-spacing: rem($size * -0.087);
 
   @if $d-size != "auto" {
     @media (min-width: $screen-sm) {
       font-size: rem($d-size);
       line-height: $d-line-height / $d-size;
     }
+  }
+
+  @media (min-width: $screen-sm) {
+    letter-spacing: rem($size * -0.17);
   }
 }
 

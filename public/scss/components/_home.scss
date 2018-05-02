@@ -1,0 +1,33 @@
+.fold {
+  @media (min-width: $screen-sm) {
+    min-height: 640px;
+    max-height: 80vh;
+    padding-top: 0;
+  }
+
+  &__header {
+    height: 240px;
+    max-height: 240px;
+    position: relative;
+    margin-bottom: 50%;
+    padding: 0 1rem;
+
+    @include retina("../../images/background-image", "jpg");
+  }
+
+  &__content {
+    padding: 0 1rem;
+  }
+
+  &__headline {
+    position: absolute;
+    top: 100%;
+    transform: translateY(50%);
+    margin-bottom: 1.5rem;
+
+    @media (min-width: $screen-sm) {
+      text-align: center;
+      color: $white;
+    }
+  }
+}
