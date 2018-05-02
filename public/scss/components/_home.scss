@@ -1,10 +1,4 @@
 .fold {
-  @media (min-width: $screen-sm) {
-    min-height: 640px;
-    max-height: 80vh;
-    padding-top: 0;
-  }
-
   &__header {
     height: 240px;
     max-height: 240px;
@@ -12,11 +6,26 @@
     margin-bottom: 50%;
     padding: 0 1rem;
 
-    @include retina("../../images/background-image", "jpg");
+    @include retina("../../images/background-image", "jpg", true);
+
+    @media (min-width: $screen-sm) {
+      min-height: 640px;
+      max-height: 80vh;
+      padding-top: 0;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__content {
     padding: 0 1rem;
+
+    @media (min-width: $screen-sm) {
+      max-width: rem(968);
+      margin: auto;
+    }
   }
 
   &__headline {
@@ -28,6 +37,8 @@
     @media (min-width: $screen-sm) {
       text-align: center;
       color: $white;
+      transform: translateX(0);
+      position: static;
     }
   }
 }
