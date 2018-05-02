@@ -37,16 +37,11 @@
 }
 
 // Set fonts based on readme instructions
-@mixin font(
-    $font: $font-helvetica,
-    $size: 16,
-    $line-height: 21,
-    $d-size: auto,
-    $d-line-height: auto
-  ) {
+@mixin font($font: $font-helvetica, $size: 16, $line-height: 21, $d-size: auto, $d-line-height: auto) {
   font-family: $font, $font-helvetica;
   font-size: rem($size);
   line-height: $line-height / $size;
+  letter-spacing: rem($size * -0.17);
 
   @if $d-size != "auto" {
     @media (min-width: $screen-sm) {

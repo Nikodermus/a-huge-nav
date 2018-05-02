@@ -5,7 +5,13 @@
 @import "_helpers";
 @import "_components";
 
+// CSS Sheets
+@import "../styles/fonts.css";
+
 :root {
+  font-family: $font-galaxie, $font-helvetica;
+  font-size: 16px;
+
   @include scrollbars(5px, $magenta);
 }
 
@@ -44,7 +50,6 @@ html {
   background: $white;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: Galaxie Copernicus Book;
   color: $black;
   box-sizing: border-box;
 
@@ -99,29 +104,23 @@ img {
   object-fit: contain;
 }
 
-h1 {
-  font: Galaxie Copernicus Book;
-  letter-spacing: -0.06em;
-  text-align: center;
-}
-
 // Fonts
 .primary-navigation {
-  @include font($font: HUGE Avant Garde Bold, $size: 21, $line-height: 48);
+  @include font($font: $font-huge, $size: 21, $line-height: 48);
 }
 
 .secondary-navigation {
-  @include font($font: Galaxie Copernicus Book, $size: 16, $line-height: 48);
+  @include font($font: $font-galaxie, $size: 16, $line-height: 48);
 }
 
 .headline {
-  @include font($font: HUGE Avant Garde Bold, $size: 44, $line-height: 48, $d-size: 120, $d-line-height: 132);
+  @include font($font: $font-huge, $size: 44, $line-height: 48, $d-size: 120, $d-line-height: 132);
 }
 
 .body-copy {
-  @include font($font: Galaxie Copernicus Book, $size: 14, $line-height: 24, $d-size: 24, $d-line-height: 36);
+  @include font($font: $font-galaxie, $size: 14, $line-height: 24, $d-size: 24, $d-line-height: 36);
 }
 
 .copyright {
-  @include font($font: Galaxie Copernicus Book, $size: 12, $line-height: 16);
+  @include font($font: $font-galaxie, $size: 12, $line-height: 16);
 }
