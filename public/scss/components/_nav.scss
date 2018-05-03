@@ -70,17 +70,12 @@
     position: absolute;
     top: 60px;
     left: 0;
+    overflow-y: hidden;
     height: calc(100vh - 60px);
-
-    // TODO: Dinamic scroll navbar
-    overflow-y: auto;
     width: 80vw;
     background: $white;
 
     &__copyright {
-      position: absolute;
-      bottom: 0;
-      left: 0;
       padding: rem(24);
     }
   }
@@ -88,6 +83,8 @@
 
 .mobile-pri {
   padding: rem(12) 0;
+  margin-bottom: 1.7rem;
+  overflow: hidden;
 
   &__item {
     padding: 0 rem(24);
@@ -103,6 +100,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     &--open {
