@@ -4,7 +4,6 @@
     max-height: 240px;
     position: relative;
     margin-bottom: 50%;
-    padding: 0 1rem;
 
     @include retina("../../images/background-image", "jpg", true);
 
@@ -20,7 +19,7 @@
   }
 
   &__content {
-    padding: 0 1rem;
+    padding: 0 1.2rem;
 
     @media (min-width: $screen-sm) {
       max-width: rem(968);
@@ -33,12 +32,45 @@
     top: 100%;
     transform: translateY(50%);
     margin-bottom: 1.5rem;
+    padding: 0 1.2rem;
 
     @media (min-width: $screen-sm) {
       text-align: center;
       color: $white;
       transform: translateX(0);
       position: static;
+    }
+  }
+}
+
+.site-container {
+  min-width: 100%;
+  min-height: 100%;
+  background-color: $white;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    opacity: 0;
+  }
+
+  &--open {
+    transform: translateX(80%);
+    height: 100vh;
+    overflow: hidden;
+
+    &::after {
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: $translucent-black;
     }
   }
 }

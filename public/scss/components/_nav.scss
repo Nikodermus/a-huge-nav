@@ -1,14 +1,5 @@
 // .main-nav => <nav>
-.main-nav {
-  height: 60px;
-  overflow: hidden;
-  background: $magenta;
-  padding: rem(20);
-
-  &__toogle {
-    width: rem(24);
-  }
-}
+.main-nav {}
 
 // Menu icon for mobile
 .toogle {
@@ -22,42 +13,66 @@
     background: $white;
     width: 100%;
   }
-
-  &--close & {
-    &__bar {
-      &:nth-of-type(1) {
-        opacity: 1;
-        transform-origin: left top;
-        transform: rotate(45deg);
-      }
-
-      &:nth-of-type(2) {
-        opacity: 0;
-      }
-
-      &:nth-of-type(3) {
-        transform-origin: left bottom;
-        transform: rotate(-45deg);
-      }
-    }
-  }
 }
 
 .nav-mobile {
+  &--open & {
+    &__buttons {
+      transform: translateX(0);
+    }
+  }
+
+  &--open {
+    .toogle {
+      &__bar {
+        &:nth-of-type(1) {
+          opacity: 1;
+          transform-origin: left top;
+          transform: rotate(45deg);
+        }
+
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        &:nth-of-type(3) {
+          transform-origin: left bottom;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__bar {
+    position: relative;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background: $magenta;
+  }
+
   &__buttons {
+    padding: rem(20);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transform: translateX(calc(-100% + 24px));
+    transform: translateX(calc(-100% + 64px));
   }
 
   &__logo {
     width: rem(50);
   }
 
-  &--open & {
-    &__buttons {
-      transform: translateX(0);
-    }
+  &__content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    width: 80vw;
+    background: $white;
+    z-index: -1;
   }
 }
