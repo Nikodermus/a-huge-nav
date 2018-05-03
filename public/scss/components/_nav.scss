@@ -71,6 +71,8 @@
     top: 60px;
     left: 0;
     height: calc(100vh - 60px);
+
+    // TODO: Dinamic scroll navbar
     overflow-y: auto;
     width: 80vw;
     background: $white;
@@ -89,6 +91,9 @@
 
   &__item {
     padding: 0 rem(24);
+    position: relative;
+    z-index: 10;
+    background: white;
 
     &:hover {
       background: $light-grey;
@@ -99,9 +104,41 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    &--open {
+      .mobile-pri__arrow {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__arrow {
     height: rem(12);
+    transform: rotate(0deg);
+  }
+}
+
+.mobile-sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  background: $white;
+  opacity: 0;
+  visibility: hidden;
+
+  &__item {
+    padding: 0 rem(24);
+
+    &:hover {
+      background: $light-grey;
+    }
+  }
+
+  &--show {
+    // z-index: 1
+    visibility: visible;
+    opacity: 1;
   }
 }
