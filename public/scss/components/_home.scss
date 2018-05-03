@@ -35,6 +35,8 @@
     padding: 0 1.2rem;
 
     @media (min-width: $screen-sm) {
+      max-width: rem(968);
+      margin: auto;
       text-align: center;
       color: $white;
       transform: translateX(0);
