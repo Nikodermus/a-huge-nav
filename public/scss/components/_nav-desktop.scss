@@ -22,19 +22,23 @@
     }
 
     &__logo {
-      display: block;
-      height: rem(24);
-      width: rem(60);
-      background: url(../../images/HUGE.png) $magenta;
-      background-position: 0 24px;
-      background-size: cover;
-      background-repeat-x: no-repeat;
-      color: transparent;
-      text-decoration: none;
-      margin: rem(24) rem(48) rem(24) rem(24);
+      display: none;
 
-      &:hover {
-        background-position: 0 54px;
+      &--desktop {
+        display: block;
+        height: rem(24);
+        width: rem(60);
+        background: url(../../images/HUGE.png) $magenta;
+        background-position: 0 24px;
+        background-size: cover;
+        background-repeat-x: no-repeat;
+        color: transparent;
+        text-decoration: none;
+        margin: rem(24) rem(48) rem(24) rem(24);
+
+        &:hover {
+          background-position: 0 54px;
+        }
       }
     }
   }
@@ -83,9 +87,8 @@
 }
 
 .primary-navigation {
-  color: $white;
-
   @media (min-width: $screen-md) {
+    color: $white;
     transform: translateY(2px);
   }
 }

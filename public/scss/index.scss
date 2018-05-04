@@ -12,7 +12,7 @@
   font-family: $font-galaxie, $font-helvetica;
   font-size: 16px;
 
-  @include scrollbars(5px, $magenta);
+  @include scrollbars(5px, darken($magenta, 10%));
 }
 
 *,
@@ -53,7 +53,7 @@ html {
   color: $black;
   box-sizing: border-box;
 
-  @include scrollbars(5px, $magenta);
+  @include scrollbars(5px, darken($magenta, 10%));
 }
 
 body {
@@ -129,4 +129,8 @@ img {
 
 a {
   text-decoration: none;
+}
+
+.scroll-hidden {
+  overflow: hidden;
 }

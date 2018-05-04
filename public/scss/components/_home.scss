@@ -74,5 +74,11 @@
       width: 100vw;
       background: $translucent-black;
     }
+
+    @media (min-width: $screen-md) {
+      transform: translateX(0);
+      overflow: unset;
+      height: unset;
+    }
   }
 }

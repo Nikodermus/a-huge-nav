@@ -1,5 +1,5 @@
 // Menu icon for mobile
-.toogle {
+.toggle {
   padding: 0;
   width: rem(24);
 
@@ -21,7 +21,7 @@
   }
 
   &--open {
-    .toogle {
+    .toggle {
       &__bar {
         &:nth-of-type(1) {
           opacity: 1;
@@ -39,10 +39,6 @@
         }
       }
     }
-  }
-
-  &__logo{
-    display: none;
   }
 
   &__bar {
@@ -66,6 +62,10 @@
 
   &__logo {
     width: rem(50);
+
+    &--desktop {
+      display: none;
+    }
   }
 
   &__content {
@@ -136,6 +136,10 @@
 
     &:hover {
       background: $light-grey;
+
+      .secondary-navigation {
+        color: $magenta;
+      }
     }
   }
 
