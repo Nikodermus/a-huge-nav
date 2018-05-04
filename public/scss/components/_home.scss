@@ -11,7 +11,7 @@
       margin-bottom: 12vmin;
     }
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
       min-height: 640px;
       max-height: 80vh;
       padding-top: 0;
@@ -25,7 +25,7 @@
   &__content {
     padding: 0 1.2rem;
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
       max-width: rem(968);
       margin: auto;
     }
@@ -38,7 +38,7 @@
     margin-bottom: 1.5rem;
     padding: 0 1.2rem;
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
       max-width: rem(968);
       margin: auto;
       text-align: center;
@@ -83,7 +83,7 @@
       transform: translateX(50%);
     }
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
       transform: translateX(0);
       overflow: unset;
       height: unset;

@@ -1,5 +1,5 @@
 .main-nav {
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-sm) {
     &__bar {
       display: none;
     }
@@ -45,7 +45,7 @@
 }
 
 .pri-nav {
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-sm) {
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -87,14 +87,14 @@
 }
 
 .primary-navigation {
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-sm) {
     color: $white;
     transform: translateY(2px);
   }
 }
 
 .sub-nav {
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-sm) {
     min-width: rem(230);
   }
 }
