@@ -59,13 +59,13 @@
   letter-spacing: rem($size * -0.087);
 
   @if $d-size != "auto" {
-    @media (min-width: $screen-sm) {
+    @media (min-width: $screen-md) {
       font-size: rem($d-size);
       line-height: $d-line-height / $d-size;
     }
   }
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     letter-spacing: rem($size * -0.05);
   }
 }
