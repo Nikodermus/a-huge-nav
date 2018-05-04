@@ -77,6 +77,10 @@
     width: 80vw;
     background: $white;
 
+    @media (min-width: $screen-sm) {
+      width: 50vw;
+    }
+
     &__copyright {
       padding: rem(24);
     }

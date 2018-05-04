@@ -3,9 +3,13 @@
     height: 240px;
     max-height: 240px;
     position: relative;
-    margin-bottom: 50%;
+    margin-bottom: 50vmin;
 
     @include retina("../../images/background-image", "jpg", true);
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 12vmin;
+    }
 
     @media (min-width: $screen-md) {
       min-height: 640px;
@@ -73,6 +77,10 @@
       height: 100vh;
       width: 100vw;
       background: $translucent-black;
+    }
+
+    @media (min-width: $screen-sm) {
+      transform: translateX(50%);
     }
 
     @media (min-width: $screen-md) {
