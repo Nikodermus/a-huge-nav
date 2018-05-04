@@ -66,7 +66,10 @@ function scrollToTop(elem, duration = 500) {
 }
 
 function mobileEventListeners() {
-  toggle.addEventListener('click', triggerNav)
+  // Add mobile event listeners
+  site_container.addEventListener('click', triggerNav);
+  toggle.addEventListener('click', triggerNav);
+
   sub_items.map(elem => {
     elem.addEventListener('click', triggerSub)
 
@@ -82,10 +85,7 @@ function mobileEventListeners() {
 }
 
 function desktopEventListeners() {
-  toggle.removeEventListener('click', triggerNav)
   sub_items.map(elem => {
-    elem.removeEventListener('click', triggerSub)
-
     // Add hover effect by js in desktop
     elem.addEventListener('mouseenter', () => {
       site_container.classList.add('site-container--open');
@@ -94,12 +94,17 @@ function desktopEventListeners() {
     elem.addEventListener('mouseleave', () => {
       site_container.classList.remove('site-container--open');
     });
+
+    // Remove mobile event listeners
+    elem.removeEventListener('click', triggerSub)
   });
 
+  site_container.removeEventListener('click', triggerNav);
+  toggle.removeEventListener('click', triggerNav)
 }
 
 function isMobile() {
-  return window.innerWidth < 960
+  return window.innerWidth < 960;
 }
 
 window.addEventListener('resize', () => {
