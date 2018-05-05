@@ -69,10 +69,10 @@
   }
 
   &__content {
-    position: absolute;
+    position: fixed;
     top: 60px;
+    overflow-y: auto;
     left: 0;
-    overflow-y: hidden;
     height: calc(100vh - 60px);
     width: 80vw;
     background: $white;

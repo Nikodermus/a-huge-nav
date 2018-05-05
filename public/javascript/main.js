@@ -26,7 +26,6 @@ function triggerNav() {
 function triggerSub(e) {
   const li = e.target.closest('.pri-nav__item--inner');
   const sub_menu = li.querySelector('.sub-nav');
-  const menu_pri = document.querySelector('.pri-nav');
   const menu_container = document.querySelector('.main-nav__content')
 
   const sub_open = sub_menu.classList.contains('sub-nav--show');
@@ -42,15 +41,6 @@ function triggerSub(e) {
     li.style.marginBottom = `${sub_menu.offsetHeight}px`;
     li.classList.add('pri-nav__item--open');
     sub_menu.classList.add('sub-nav--show');
-  }
-
-  //  Should the content be scrollable?
-  if (
-    menu_pri.offsetHeight > menu_container.offsetHeight
-  ) {
-    menu_container.style.overflowY = 'hidden';
-  } else {
-    menu_container.style.overflowY = 'auto';
   }
 }
 
@@ -104,7 +94,7 @@ function desktopEventListeners() {
 }
 
 function isMobile() {
-  return window.innerWidth < 960;
+  return window.innerWidth < 768;
 }
 
 window.addEventListener('resize', () => {
