@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Navexercise - v0.1.1</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Navexercise - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Exercise for candidates to complete where they will build a responsive nav layout</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/hugeinc/NavExercise">Navexercise - v0.1.1</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="clearfix" data-type="mixin"><a href="#undefined-mixin-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="retina" data-type="mixin"><a href="#undefined-mixin-retina">retina</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="scrollbars" data-type="mixin"><a href="#undefined-mixin-scrollbars">scrollbars</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font" data-type="mixin"><a href="#undefined-mixin-font">font</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="em" data-type="function"><a href="#undefined-function-em">em</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="rem" data-type="function"><a href="#undefined-function-rem">rem</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-css"><a href="#undefined-css">csss</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root" data-type="css"><a href="#undefined-css-// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root">// Libraries @import &quot;../../node_modules/reset-css/_reset&quot;; // SCSS Partials @import &quot;_helpers&quot;; @import &quot;_components&quot;; // CSS Sheets @import &quot;../styles/fonts.css&quot;; :root</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix() { 
+  &amp;::after,
+  &amp;::before {
+    content: &#39;&#39;;
+    display: table;
+    line-height: 0;
+  }
+
+  &amp;::after {
+    clear: both;
+  }
+ }" data-collapsed="@mixin clearfix() { ... }"><code>@mixin clearfix() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Clear floating elements</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="undefined-mixin-retina"><h3 class="item__heading"><a class="item__name" href="#mixin-retina">retina</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin retina($file, $ext, $parallax: false) { 
+  background-image: url(&quot;#{$file}.#{$ext}&quot;);
+  background-size: cover;
+  background-position: center center;
+
+  @if $parallax {
+    background-attachment: fixed;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url(&quot;#{$file}@2x.#{$ext}&quot;);
+  }
+ }" data-collapsed="@mixin retina($file, $ext, $parallax: false) { ... }"><code>@mixin retina($file, $ext, $parallax: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Include support for retina and parallax-like backgrounds</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$file</code></th><td data-label="desc"><p>File path</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ext</code></th><td data-label="desc"><p>File extension</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$parallax</code></th><td data-label="desc"><p>description</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="undefined-mixin-scrollbars"><h3 class="item__heading"><a class="item__name" href="#mixin-scrollbars">scrollbars</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, transparent, 50%)) { 
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+ }" data-collapsed="@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, transparent, 50%)) { ... }"><code>@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, transparent, 50%)) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Add custom styled scrollbars when possible</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Size of chrome scroll bars</p></td><td data-label="type"><code>Size</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$foreground-color</code></th><td data-label="desc"><p>Main scroll bar color</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$background-color</code></th><td data-label="desc"><p>Back scroll bar color</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>mix($foreground-color, transparent, 50%)</code></td></tr></tbody></table></section><section class="main__item container item" id="undefined-mixin-font"><h3 class="item__heading"><a class="item__name" href="#mixin-font">font</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font($font: $font-helvetica, $size: 16, $line-height: 21, $d-size: auto, $d-line-height: auto) { 
+  font-family: $font, $font-helvetica;
+  font-size: rem($size);
+  line-height: $line-height / $size;
+  letter-spacing: rem($size * -0.087);
+
+  @if $d-size != &quot;auto&quot; {
+    @media (min-width: $screen-sm) {
+      font-size: rem($d-size);
+      line-height: $d-line-height / $d-size;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    letter-spacing: rem($size * -0.05);
+  }
+ }" data-collapsed="@mixin font($font: $font-helvetica, $size: 16, $line-height: 21, $d-size: auto, $d-line-height: auto) { ... }"><code>@mixin font($font: $font-helvetica, $size: 16, $line-height: 21, $d-size: auto, $d-line-height: auto) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Set fonts based on readme instructions</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font</code></th><td data-label="desc"><p>Font-family</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$font-helvetica</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Main font-size</p></td><td data-label="type"><code>Size</code></td><td data-label="default"><code>16</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$line-height</code></th><td data-label="desc"><p>Main line-height</p></td><td data-label="type"><code>Size</code></td><td data-label="default"><code>21</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$d-size</code></th><td data-label="desc"><p>Desktop-up font-size</p></td><td data-label="type"><code>Size</code></td><td data-label="default"><code>auto</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$d-line-height</code></th><td data-label="desc"><p>Desktop-up line-height</p></td><td data-label="type"><code>Size</code></td><td data-label="default"><code>auto</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-em"><h3 class="item__heading"><a class="item__name" href="#function-em">em</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function em($px, $base: $base-font-size) { 
+  @return $px / $base * 1em;
+ }" data-collapsed="@function em($px, $base: $base-font-size) { ... }"><code>@function em($px, $base: $base-font-size) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>PX to EM</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>Pixels to be converted</p></td><td data-label="type"><code>Size</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$base</code></th><td data-label="desc"><p>Convertion rate</p></td><td data-label="type"><code>Size</code></td><td data-label="default"><code>$base-font-size</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Size</code> &mdash;<p>$px in em</p></div></section><section class="main__item container item" id="undefined-function-rem"><h3 class="item__heading"><a class="item__name" href="#function-rem">rem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rem($px, $base: $base-font-size) { 
+  @return $px / $base * 1rem;
+ }" data-collapsed="@function rem($px, $base: $base-font-size) { ... }"><code>@function rem($px, $base: $base-font-size) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>PX to REM</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc"><p>Pixels to be converted</p></td><td data-label="type"><code>Size</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$base</code></th><td data-label="desc"><p>Convertion rate</p></td><td data-label="type"><code>Size</code></td><td data-label="default"><code>$base-font-size</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Size</code> &mdash;<p>$px in rem</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font"><code>font</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font"><code>font</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font"><code>font</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font"><code>font</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-css"><h2 class="main__heading--secondary"><div class="container">csss</div></h2><section class="main__item container item" id="undefined-css-// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root"><h3 class="item__heading"><a class="item__name" href="#css-// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root">// Libraries @import &quot;../../node_modules/reset-css/_reset&quot;; // SCSS Partials @import &quot;_helpers&quot;; @import &quot;_components&quot;; // CSS Sheets @import &quot;../styles/fonts.css&quot;; :root</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root {
+  font-family: $font-galaxie, $font-helvetica;
+  font-size: 16px;
+
+  @include scrollbars(5px, darken($magenta, 10%));
+}</code>" data-collapsed="// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root { ... }"><code>// Libraries
+@import &quot;../../node_modules/reset-css/_reset&quot;;
+
+// SCSS Partials
+@import &quot;_helpers&quot;;
+@import &quot;_components&quot;;
+
+// CSS Sheets
+@import &quot;../styles/fonts.css&quot;;
+
+:root { ... }</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Nicolas M. Pardo</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/hugeinc/NavExercise">Navexercise</a><!-- Version --> <span class="project-info__version">- v0.1.1</span><!-- License --> <span class="project-info__license">, under © 2017 Huge. All Rights Reserved.</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

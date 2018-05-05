@@ -1,6 +1,6 @@
 @import "variables";
 
-// Clear elements bellow
+/// Clear floating elements
 @mixin clearfix {
   &::after,
   &::before {
@@ -14,7 +14,10 @@
   }
 }
 
-// Background
+/// Include support for retina and parallax-like backgrounds
+/// @param {string} $file - File path
+/// @param {string} $ext - File extension
+/// @param {boolean} $parallax [false] - description
 @mixin retina($file, $ext: "png", $parallax: false) {
   background-image: url("#{$file}.#{$ext}");
   background-size: cover;
@@ -29,7 +32,10 @@
   }
 }
 
-// Add custom styled scrollbars when possible
+/// Add custom styled scrollbars when possible
+/// @param {size} $size - Size of chrome scroll bars
+/// @param {color} $foreground-color - Main scroll bar color
+/// @param {color} $background-color [mix($foreground-color, transparent, 50%)]- Back scroll bar color
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, transparent, 50%)) {
   ::-webkit-scrollbar {
     width: $size;
@@ -51,7 +57,12 @@
   }
 }
 
-// Set fonts based on readme instructions
+/// Set fonts based on readme instructions
+/// @param {string} $font [$font-helvetica] - Font-family
+/// @param {size} $size [16] - Main font-size
+/// @param {size} $line-height [21] - Main line-height
+/// @param {size} $d-size [auto] - Desktop-up font-size
+/// @param {size} $d-line-height [auto] - Desktop-up line-height
 @mixin font($font: $font-helvetica, $size: 16, $line-height: 21, $d-size: auto, $d-line-height: auto) {
   font-family: $font, $font-helvetica;
   font-size: rem($size);
@@ -70,12 +81,20 @@
   }
 }
 
-// PX to EM
+/// PX to EM
+/// @param {size} $px - Pixels to be converted
+/// @param {size} $base [$base-font-size] - Convertion rate
+/// @return {size} $px in em
+/// @see $base-font-size
 @function em($px, $base: $base-font-size) {
   @return $px / $base * 1em;
 }
 
-// PX to REM
+/// PX to REM
+/// @param {size} $px - Pixels to be converted
+/// @param {size} $base [$base-font-size] - Convertion rate
+/// @return {size} $px in rem
+/// @see $base-font-size
 @function rem($px, $base: $base-font-size) {
   @return $px / $base * 1rem;
 }
